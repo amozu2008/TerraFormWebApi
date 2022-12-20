@@ -16,6 +16,11 @@ terraform {
   }
 }
 
+variable "imagebuild" {
+  type = string
+  description = "latest image build"
+}
+
 provider "azurerm" {
   features {}
 }
@@ -38,7 +43,7 @@ resource "azurerm_container_group" "tf_container_test" {
 
   container {
     name = "joguejio-container"
-    image = "judeoguejiofor927/terraformwebapi"
+    image = "judeoguejiofor927/terraformwebapi:${imagebuild}"
     cpu = 1
     memory = 1
     ports {
