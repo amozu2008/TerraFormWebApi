@@ -43,7 +43,7 @@ resource "azurerm_container_group" "tf_container_test" {
 
   container {
     name = "joguejio-container"
-    image = "judeoguejiofor927/terraformwebapi:${imagebuild}"
+    image = "judeoguejiofor927/terraformwebapi:${var.imagebuild}"
     cpu = 1
     memory = 1
     ports {
