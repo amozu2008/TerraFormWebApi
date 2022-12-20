@@ -29,10 +29,10 @@ stages:
         Dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-- stage: Provision stage
+- stage: 'Provision stage'
   displayName: Provisioning resources on Azure
   jobs:
-  - job: Provision job
+  - job: 'Provision job'
     displayName: Provisioning container instances
     pool:
       vmImage: ubuntu-latest
