@@ -7,11 +7,20 @@ terraform {
   }
 
   required_version = ">= 1.1.0"
+
+  backend "azurerm" {
+    key = "terraform.tfstate"
+    resource_group_name = "tf-blobStorage-rg"
+    storage_account_name = "tfblobstorageaccount_1671539174002"
+    container_name = "tfstate"
+  }
 }
 
 provider "azurerm" {
   features {}
 }
+
+
 
 resource "azurerm_resource_group" "tf_test" {
     name = "terraFormWebApi-rg"
